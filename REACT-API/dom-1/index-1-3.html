@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .title {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 리액트 cdn 방식 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById("root");
+      const element = React.createElement(
+        "h1", // 만들 태그
+        {
+          className: "title", // 태그의 속성값
+          children: ["DOM Exam", "Good Luck", "Nice"], // h1태그의 작시인 textNode. 배열로도 처리가능
+        }
+      );
+      ReactDOM.render(element, root);
+    </script>
+  </body>
+</html>

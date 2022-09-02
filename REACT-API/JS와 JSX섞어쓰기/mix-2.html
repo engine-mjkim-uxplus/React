@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <!-- 
+  반복문을 쓰지않고
+  1부터 5까지 숫자 중에서 짝수이면 h1 홀수이면 h4로 출력하는
+  프로그램을 React로 작성하시오
+-->
+    <script type="text/babel">
+      // props 사용하기
+      const Message = ({ number, selected }) => {
+        return selected ? <h1>{number}</h1> : <h3>{number}</h3>;
+      };
+      const element = (
+        <>
+          {[1, 2, 3, 4, 5].map((number) => (
+            <Message key={number} number={number} selected={number === 3} />
+          ))}
+        </>
+      ); // Fragment의 속성으로 children을 넘기는 것도 가능하다.
+      ReactDOM.render(element, document.getElementById("root"));
+    </script>
+  </body>
+</html>

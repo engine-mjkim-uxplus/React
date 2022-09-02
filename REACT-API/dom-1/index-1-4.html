@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 리액트 cdn 방식 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- 리액트 환경이 아닌 곳에서 사용하려면 바벨이 꼭 필요하다 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+      /* 바벨은 리액트 같은 문법을 표준 스크립트로 변환시켜준다 */
+      // type에 text/babel을 줘야 최신 문법을 사용한 최적화 가능
+      const root = document.getElementById("root");
+      const text = "DOM Test";
+      const textClassName = "title";
+      // 리액트 문법으로 element 생성
+      const msg = <h1 className={textClassName}>{text}</h1>;
+      ReactDOM.render(msg, root);
+    </script>
+  </body>
+</html>

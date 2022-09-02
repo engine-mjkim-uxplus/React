@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- cdn방식으로 하면 react 페이지를 jsp안에 넣을 수 있다 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+      // props일 때는 {}중괄호로 묶어 줘야 한다. 객체이므로
+      // Print 앞글자 반드시 대문자로 사용
+      const Print = ({ title, description }) => (
+        <>
+          <h1>
+            {" "}
+            {/*  JSX */}
+            {title}
+            {/* JS */}
+          </h1>{" "}
+          {/*  JSX */}
+          <p>{description}</p>
+        </>
+      );
+      const element = (
+        <>
+          <Print title="Good" description="좋아요!" /> {/* 객체를 사용*/}
+          <Print title="Good" description="나빠요!" />
+          <Print title="Good" description="테스트!" />
+        </>
+      ); // Fragment의 속성으로 children을 넘기는 것도 가능하다.
+      ReactDOM.render(element, document.getElementById("root"));
+    </script>
+  </body>
+</html>

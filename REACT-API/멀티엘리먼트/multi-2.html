@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- cdn방식으로 하면 react 페이지를 jsp안에 넣을 수 있다 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+      function tick() {
+        const element = (
+          <React.Fragment
+            children={[<h1>first</h1>, <h2>second</h2>, <h3>three</h3>]} // JSX안에 Array형태로 나열이 가능하다.
+          />
+        ); // Fragment의 속성으로 children을 넘기는 것도 가능하다.
+        ReactDOM.render(element, document.getElementById("root"));
+      }
+      tick();
+    </script>
+  </body>
+</html>
